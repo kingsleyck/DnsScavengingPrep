@@ -33,7 +33,7 @@ function Get-BrokenDnsAcls
         A list of DHCP servers that may have ownership of records.
     .PARAMETER DnsUpdateProxy
         The name of the DnsUpdateProxy user. This is required so go make one.
-    .PARAMETER Partition
+    .PARAMETER ReplicationScope
         The partition in which ZoneName is stored, e.g. Domain, Forest or Legacy.
     .PARAMETER ZoneName
         A primary Active Directory integrated DNS zone.
@@ -43,17 +43,17 @@ function Get-BrokenDnsAcls
     param
     (
         [Parameter(Mandatory)]
-	    [string]$DnsUpdateProxy,
+	[string]$DnsUpdateProxy,
 
-	    [Parameter(Mandatory)]
-	    [string[]]$DhcpServers,
+	[Parameter(Mandatory)]
+	[string[]]$DhcpServers,
 
-	    [Parameter(Mandatory,ValueFromPipeline,ValueFromPipelineByPropertyName)]
+	[Parameter(Mandatory,ValueFromPipeline,ValueFromPipelineByPropertyName)]
         [ValidateSet('Domain','Forest','Legacy')]
         [string]$ReplicationScope,
 
         [Parameter(Mandatory,ValueFromPipeline,ValueFromPipelineByPropertyName)]
-	    [string]$ZoneName
+	[string]$ZoneName
     )
 
     begin
@@ -166,11 +166,11 @@ function Reset-BrokenDnsAcls
     [CmdletBinding(SupportsShouldProcess=$true,ConfirmImpact='High')]
     param
     (
-	    [Parameter(Mandatory,ValueFromPipeline,ValueFromPipelineByPropertyName)]
-	    [System.DirectoryServices.ActiveDirectorySecurity]$Acl,
+	[Parameter(Mandatory,ValueFromPipeline,ValueFromPipelineByPropertyName)]
+	[System.DirectoryServices.ActiveDirectorySecurity]$Acl,
 
         [Parameter(Mandatory,ValueFromPipeline,ValueFromPipelineByPropertyName)]
-	    [string]$Account
+	[string]$Account
     )
 
     process
