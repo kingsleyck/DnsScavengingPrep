@@ -7,7 +7,7 @@ function Get-DnsZonesForAclCheck
     .SYNOPSIS 
         Retrieve the subset of DNS zones where scavenging could be enabled. 
     .EXAMPLE 
-        Get-DnsZonesForScavenging
+        Get-DnsZonesForAclCheck
     #> 
     [CmdletBinding()]
 
