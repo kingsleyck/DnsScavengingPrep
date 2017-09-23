@@ -32,7 +32,7 @@ function Get-BrokenDnsAcls
     .PARAMETER DhcpServers
         A list of DHCP servers that may have ownership of records.
     .PARAMETER DnsUpdateProxy
-        The name of the DnsUpdateProxy user. This is required so go make one.
+        The name of the DnsUpdateProxy user. This is required and is best practice for secure dynamic updates.
     .PARAMETER ReplicationScope
         The partition in which ZoneName is stored, e.g. Domain, Forest or Legacy.
     .PARAMETER ZoneName
