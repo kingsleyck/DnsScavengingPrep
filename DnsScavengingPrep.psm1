@@ -1,5 +1,5 @@
-﻿#Requires -Version 3
-#Requires -Module ActiveDirectory 
+#Requires -Version 3
+#Requires -Module ActiveDirectory, DnsServer
 
 function Get-DnsZonesForAclCheck
 {
